@@ -12,6 +12,18 @@
 
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <script src="js/jquery.min.js"></script>
+    <script>
+    	$( document ).ready(function() {
+    		$("#btnMailMe").click(function(){
+    		  const Url='https://hooks.zapier.com/hooks/catch/239824/xahysc/?email=' + $('#inputEmail1').val();
+			  $.post(Url, function(data, status){
+			    console.log("Successfully registered email id.")
+			  });
+			});
+		});
+    	
+    </script>
     <style>
     	body {
     		background:#000000;
@@ -68,6 +80,17 @@
 			<p class="lead text-center center margin-bottom">
 				Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien sapien.
 			</p>
+			<br />
+			<div class="form-group">
+				<label for="inputEmail1">
+					Email address
+				</label>
+				<input type="email" class="form-control" id="inputEmail1" />
+				<button type="submit" id="btnMailMe" class="btn btn-primary">
+					Submit
+				</button>
+			</div>
+			<br />
 			<video class="hide-tablet ignore-observer center" width="90%" muted="muted" poster="http://www.framer.com/assets/static/images/frontpage/header-window-poster.jpg">
         		<source src="https://d33wubrfki0l68.cloudfront.net/3e412e998b4e8691abfa301f16cdea0235c50c51/59ee5/assets/static/images/frontpage/header-window.mp4" type="video/mp4">
       		</video>
@@ -253,8 +276,6 @@
 		</div>
 	</div>
 </div>
-
-    <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/scripts.js"></script>
   </body>
