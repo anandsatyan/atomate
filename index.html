@@ -43,6 +43,23 @@
 				  	console.log("Erraneous email id.")
 				}
 			});
+
+    		$("#loader2").hide();
+			$("#btnMailMe2").click(function(){
+    			if($('#inputEmail2').val().length > 5 && validateEmail('inputEmail2')) {
+	    		  $("#emailLeadForm2").hide();
+	    		  $("#loader2").show();
+	    		  const Url='https://script.google.com/macros/s/AKfycbwhDefLeAdmGFLALSK3pklSMHoQ-Zth5EytrdmpmJxpmqX73hyF/exec?email=' + $('#inputEmail2').val();
+				  $.post(Url, function(data, status){
+				    console.log("Successfully registered email id.");  
+				    $("#loader2").hide();
+				    $("#navbar").append("<center style='padding:15px;'>Your email id is added to our alpha list. You should receive a mail from us soon.</center>");
+				  });
+				}
+				else {
+				  	console.log("Erraneous email id.")
+				}
+			});
 		});  
 
 		function validateEmail(id)
@@ -65,7 +82,15 @@
 			div.append('<span id="glypcn'+id+'" class="glyphicon glyphicon-ok form-control-feedback"></span>');
 			    return true;
 			}
+		}
 
+		window.onscroll = function() {scrollFunction()};
+		function scrollFunction() {
+		  if (document.body.scrollTop > 280 || document.documentElement.scrollTop > 280) {
+		    document.getElementById("navbar").style.top = "0";
+		  } else {
+		    document.getElementById("navbar").style.top = "-80px";
+		  }
 		}
     </script>
     <style>
@@ -108,11 +133,67 @@
 		.blockquote {
 			border-left:none;
 		}
-	</style>
+		#navbar {
+		  background-color: #000;
+		  position: fixed;
+		  top: -80px;
+		  width: 100%;
+		  display: block;
+		  transition: top 0.3s;
+		  z-index:100;
+		  padding-top:16px;
+		  -webkit-box-shadow: 0px 10px 32px -4px rgba(0,0,0,0.2);
+		  -moz-box-shadow: 0px 10px 32px -4px rgba(0,0,0,0.2);
+		  box-shadow: 0px 10px 32px -4px rgba(0,0,0,0.2);
+		}
 
+		#navbar a {
+		  float: left;
+		  display: block;
+		  color: #f2f2f2;
+		  text-align: center;
+		  padding: 15px;
+		  text-decoration: none;
+		  font-size: 17px;
+		}
+
+		#navbar a:hover {
+		  background-color: #ddd;
+		  color: black;
+		}
+
+		.input-group-append {
+		  border-top-left-radius: 0;
+    	  border-bottom-left-radius: 0;
+		}
+
+		@media (max-width: 768px) {
+		    .text-center-sm {
+		        text-align: center;
+		    }
+		}
+	</style>
   </head>
   <body>
 
+	<div id="navbar">
+	  <form id='emailLeadForm2' name="submit-to-google-sheet2">
+	  	<div class="container-fluid">
+		  	<div class="row justify-content-md-center">
+		  		<div class="col-md-4 text-center-sm" style="padding:8px;">
+				  	<img src="img/atomate_logo.svg" width="30px" />&nbsp; Become an alpha tester for Atomate.
+				</div>
+				<div class="col-md-4">
+					<div class="input-group mb-3 col-md-10 float-right">
+					  <input id="inputEmail2" type="email" class="form-control" placeholder="Enter your email id" aria-label="Enter your email id" >
+					    <button id="btnMailMe2" class="btn btn-primary input-group-append" type="button">Notify me</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	  </form>
+	  <center><img src="img/loader.svg" id="loader2" style="margin:25px 15px;"/></center>
+	</div>
     <div class="container-fluid">
 	<div class="row justify-content-md-center">
 		<div class="col-md-12"><br /><br />
@@ -127,10 +208,8 @@
 			<form id='emailLeadForm' name="submit-to-google-sheet">
 			  
 				<div class="input-group mb-3 col-md-3">
-				  <input id="inputEmail1" type="email" class="form-control" placeholder="Enter your email id" aria-label="Enter your email id" aria-describedby="basic-addon2">
-				  <div class="input-group-append">
-				    <button id="btnMailMe" class="btn btn-primary" type="button">Notify me</button>
-				  </div>
+				  <input id="inputEmail1" type="email" class="form-control" placeholder="Enter your email id" aria-label="Enter your email id" >
+				  <button id="btnMailMe" class="btn btn-primary input-group-append" type="button">Notify me</button>
 				</div>
 
 			</form>
