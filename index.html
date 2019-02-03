@@ -8,10 +8,8 @@
     <meta name="google-site-verification" content="r4rXqkZhGUcxzPGT9ykaKh-EliNcaEjKHnOLkL_TfzY" />
 	<link rel="icon" href="img/favicon.png" sizes="16x16" type="image/png">
     <title>Atomate - Beautiful frontend creator</title>
-
-    <meta name="description" content="Source code generated using layoutit.com">
-    <meta name="author" content="LayoutIt!">
-
+    <meta name="description" content="Easy Frontend Creator">
+    <meta name="author" content="Anand Satyan">
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <script src="js/jquery.min.js"></script>
@@ -21,10 +19,10 @@
 	  window.dataLayer = window.dataLayer || [];
 	  function gtag(){dataLayer.push(arguments);}
 	  gtag('js', new Date());
-
 	  gtag('config', 'UA-133670971-1');
 	</script>
-
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script>
     	$( document ).ready(function() {
     		$("#loader").hide();
@@ -43,7 +41,6 @@
 				  	console.log("Erraneous email id.")
 				}
 			});
-
     		$("#loader2").hide();
 			$("#btnMailMe2").click(function(){
     			if($('#inputEmail2').val().length > 5 && validateEmail('inputEmail2')) {
@@ -61,7 +58,6 @@
 				}
 			});
 		});  
-
 		function validateEmail(id)
 		{
 			  var email_regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
@@ -83,7 +79,6 @@
 			    return true;
 			}
 		}
-
 		window.onscroll = function() {scrollFunction()};
 		function scrollFunction() {
 		  if (document.body.scrollTop > 280 || document.documentElement.scrollTop > 280) {
@@ -126,7 +121,6 @@
 		.footerlist {
 			list-style-type: none;
 		}
-
 		.footerlist li {
 			padding:10px;
 		}
@@ -146,7 +140,6 @@
 		  -moz-box-shadow: 0px 10px 32px -4px rgba(0,0,0,0.2);
 		  box-shadow: 0px 10px 32px -4px rgba(0,0,0,0.2);
 		}
-
 		#navbar a {
 		  float: left;
 		  display: block;
@@ -156,21 +149,17 @@
 		  text-decoration: none;
 		  font-size: 17px;
 		}
-
 		#navbar a:hover {
 		  background-color: #ddd;
 		  color: black;
 		}
-
 		.input-group-append {
 		  border-top-left-radius: 0;
     	  border-bottom-left-radius: 0;
 		}
-
 		.lead {
 			max-width:650px;
 		}
-
 		@media (max-width: 768px) {
 		    .text-center-sm {
 		        text-align: center;
@@ -179,7 +168,6 @@
 	</style>
   </head>
   <body>
-
 	<div id="navbar">
 	  <form id='emailLeadForm2' name="submit-to-google-sheet2">
 	  	<div class="container-fluid">
@@ -200,9 +188,9 @@
 	</div>
     <div class="container-fluid">
 	<div class="row justify-content-md-center">
-		<div class="col-md-12"><br /><br />
+		<div class="col-md-12 aos-item" data-aos="fade-up"><br /><br />
 			<center><img src="img/atomate_logo.svg" width="70px" /></center><br /><br />
-			<h1 class=" text-center">
+			<h1 class="text-center">
 				Get from idea to code faster
 			</h1>
 			<span class="lead text-center center">
@@ -287,13 +275,13 @@
 						</svg>
 				</div>
 			</div><br /><br />
-			<div class="row margin-top justify-content-md-center">
+			<div class="row margin-top justify-content-md-center easein">
 				<div class="col-md-4">
 					<video class="videosize" loop="loop" playsinline="playsinline" muted="muted" poster="https://www.framer.com/assets/static/images/frontpage/components-video-poster.jpg">
           				<source src="https://d33wubrfki0l68.cloudfront.net/f50d926c7f08c8d0d8f90ae8fd7498a64a526867/304a8/assets/static/images/frontpage/components-video.mp4" type="video/mp4">
         			</video>
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-4 aos-item" data-aos="fade-up">
 					 <span class="badge badge-default">Interactions</span><br /><br />
 					<h1>
 						Build flows, not just screens
@@ -304,7 +292,7 @@
 				</div>
 			</div>
 			<div class="row margin-top justify-content-md-center">
-				<div class="col-md-4">
+				<div class="col-md-4 aos-item" data-aos="fade-up">
 					 <span class="badge badge-default">Interactions</span><br /><br />
 					<h1>
 						Reuse UI from popular apps
@@ -325,7 +313,7 @@
           				<source src="https://d33wubrfki0l68.cloudfront.net/f50d926c7f08c8d0d8f90ae8fd7498a64a526867/304a8/assets/static/images/frontpage/components-video.mp4" type="video/mp4">
         			</video>
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-4 aos-item" data-aos="fade-up">
 					 <span class="badge badge-default">Interactions</span><br /><br />
 					<h1>
 						Build your brand strategy
@@ -336,7 +324,7 @@
 				</div>
 			</div>
 			<div class="row margin-top justify-content-md-center">
-				<div class="col-md-4">
+				<div class="col-md-4 aos-item" data-aos="fade-up">
 					 <span class="badge badge-default">Interactions</span><br /><br />
 					<h1>
 						Atomate is built for developers to design
@@ -346,7 +334,7 @@
 
 					</p>
 				</div>
-				<div class="col-md-4">
+				<div class="col-md-4 aos-item" data-aos="fade-up">
 					<video class="videosize" loop="loop" playsinline="playsinline" muted="muted" poster="https://www.framer.com/assets/static/images/frontpage/components-video-poster.jpg">
           				<source src="https://d33wubrfki0l68.cloudfront.net/f50d926c7f08c8d0d8f90ae8fd7498a64a526867/304a8/assets/static/images/frontpage/components-video.mp4" type="video/mp4">
         			</video>
@@ -354,7 +342,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="row justify-content-md-center margin-top">
+	<div class="row justify-content-md-center margin-top aos-item" data-aos="fade-up">
 		<div class="col-md-4">
 			<blockquote class="blockquote margin-top margin-bottom">
 				<p class="mb-0">
@@ -436,8 +424,11 @@
 		</div>
 	</div>
 </div>
-<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/scripts.js"></script>
+	<script src="https://npmcdn.com/tether@1.2.4/dist/js/tether.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/scripts.js"></script>
+	<script>
+		AOS.init();
+	</script>
   </body>
 </html>
