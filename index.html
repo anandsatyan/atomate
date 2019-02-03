@@ -17,16 +17,44 @@
     	$( document ).ready(function() {
     		$("#loader").hide();
     		$("#btnMailMe").click(function(){
-    		  $("#emailLeadForm").hide();
-    		  $("#loader").show();
-    		  const Url='https://script.google.com/macros/s/AKfycbwhDefLeAdmGFLALSK3pklSMHoQ-Zth5EytrdmpmJxpmqX73hyF/exec?email=' + $('#inputEmail1').val();
-			  $.post(Url, function(data, status){
-			    console.log("Successfully registered email id.");  
-			    $("#result").text("Added to waiting list. You should receive a mail soon.");
-			    $("#loader").hide();
-			  });
+    			if($('#inputEmail1').val().length > 5 && validateEmail('inputEmail1')) {
+	    		  $("#emailLeadForm").hide();
+	    		  $("#loader").show();
+	    		  const Url='https://script.google.com/macros/s/AKfycbwhDefLeAdmGFLALSK3pklSMHoQ-Zth5EytrdmpmJxpmqX73hyF/exec?email=' + $('#inputEmail1').val();
+				  $.post(Url, function(data, status){
+				    console.log("Successfully registered email id.");  
+				    $("#result").text("Added to waiting list. You should receive a mail soon.");
+				    $("#loader").hide();
+				  });
+				}
+				else {
+				  	console.log("Erraneous email id.")
+				}
 			});
 		});  
+
+		function validateEmail(id)
+		{
+			  var email_regex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i;
+			if(!email_regex.test($("#"+id).val()))
+			{
+			var div = $("#"+id).closest("div");
+			div.removeClass("has-success");
+			$("#glypcn"+id).remove();
+			div.addClass("has-error has-feedback");
+			div.append('<span id="glypcn'+id+'" class="glyphicon glyphicon-remove form-control-feedback"></span>');
+			return false;
+			}
+			else{
+			    var div = $("#"+id).closest("div");
+			    div.removeClass("has-error");
+			$("#glypcn"+id).remove();
+			div.addClass("has-success has-feedback");
+			div.append('<span id="glypcn'+id+'" class="glyphicon glyphicon-ok form-control-feedback"></span>');
+			    return true;
+			}
+
+		}
     </script>
     <style>
     	body {
