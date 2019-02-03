@@ -16,11 +16,13 @@
     <script>
     	$( document ).ready(function() {
     		$("#btnMailMe").click(function(){
+    		  $("#btnMailMe").hide();
     		  const Url='https://script.google.com/macros/s/AKfycbwhDefLeAdmGFLALSK3pklSMHoQ-Zth5EytrdmpmJxpmqX73hyF/exec?email=' + $('#inputEmail1').val();
 			  $.post(Url, function(data, status){
-			    console.log("Successfully registered email id.")
-			    $("#result").text("Added to waiting list. You should receive a mail soon.")
+			    console.log("Successfully registered email id.");  
+			    $("#result").text("Added to waiting list. You should receive a mail soon.");
 			  });
+			  $("#btnMailMe").show();
 			});
 		});  
     </script>
