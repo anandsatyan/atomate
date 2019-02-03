@@ -19,6 +19,7 @@
     		  const Url='https://script.google.com/macros/s/AKfycbwhDefLeAdmGFLALSK3pklSMHoQ-Zth5EytrdmpmJxpmqX73hyF/exec?email=' + $('#inputEmail1').val();
 			  $.post(Url, function(data, status){
 			    console.log("Successfully registered email id.")
+			    $("#result").text("Added to waiting list. You should receive a mail soon.")
 			  });
 			});
 		});  
@@ -85,6 +86,7 @@
 			  <a id="btnMailMe" class="btn btn-primary">
 					Submit
 				</a>
+				<a id="result"></a>
 			</form>
 
 			<br />
