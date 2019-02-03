@@ -15,14 +15,16 @@
     <script src="js/jquery.min.js"></script>
     <script>
     	$( document ).ready(function() {
+    		$("#loader").hide();
     		$("#btnMailMe").click(function(){
-    		  $("#btnMailMe").hide();
+    		  $("#emailLeadForm").hide();
+    		  $("#loader").show();
     		  const Url='https://script.google.com/macros/s/AKfycbwhDefLeAdmGFLALSK3pklSMHoQ-Zth5EytrdmpmJxpmqX73hyF/exec?email=' + $('#inputEmail1').val();
 			  $.post(Url, function(data, status){
 			    console.log("Successfully registered email id.");  
 			    $("#result").text("Added to waiting list. You should receive a mail soon.");
+			    $("#loader").hide();
 			  });
-			  $("#btnMailMe").show();
 			});
 		});  
     </script>
@@ -81,17 +83,21 @@
 			<p class="lead text-center center margin-bottom">
 				Lorem ipsum dolor sit amet, <strong>consectetur adipiscing elit</strong>. Aliquam eget sapien sapien.
 			</p>
-			<br />
-			
-			<form name="submit-to-google-sheet">
-			  <input id="inputEmail1" name="email" type="email" placeholder="Email" required>
-			  <a id="btnMailMe" class="btn btn-primary">
-					Submit
-				</a>
-				<a id="result"></a>
-			</form>
+			<center>
+			<form id='emailLeadForm' name="submit-to-google-sheet">
+			  
+				<div class="input-group mb-3 col-md-3">
+				  <input id="inputEmail1" type="email" class="form-control" placeholder="Enter your email id" aria-label="Enter your email id" aria-describedby="basic-addon2">
+				  <div class="input-group-append">
+				    <button id="btnMailMe" class="btn btn-primary" type="button">Notify me</button>
+				  </div>
+				</div>
 
-			<br />
+			</form>
+			<img src="img/loader.svg" id="loader"/>
+			<a id="result"></a>
+		</center>
+			<br /><br />
 			<video class="hide-tablet ignore-observer center" width="90%" muted="muted" poster="http://www.framer.com/assets/static/images/frontpage/header-window-poster.jpg">
         		<source src="https://d33wubrfki0l68.cloudfront.net/3e412e998b4e8691abfa301f16cdea0235c50c51/59ee5/assets/static/images/frontpage/header-window.mp4" type="video/mp4">
       		</video>
