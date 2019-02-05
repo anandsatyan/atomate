@@ -34,6 +34,7 @@
 				  $.post(Url, function(data, status){
 				    console.log("Successfully registered email id.");  
 				    $("#result").text("Added to waiting list. You should receive a mail soon.");
+				    ga('send', 'event', 'Landing Page', 'Signed up');
 				    $("#loader").hide();
 				  });
 				}
@@ -212,7 +213,7 @@
 			<div class="row justify-content-md-center margin-top">
 				<div class="col-md-6 center">
 					<p class="text-center lead margin-top">
-						Frontend Developers and designers from popular companies are already using Devsdesign to build beautiful and usable websites and apps.
+						Frontend Developers and designers from popular companies are using Devsdesign to build beautiful websites and apps.
 					</p><br /><br />
 				</div>
 			</div>
@@ -237,7 +238,7 @@
 						Reuse UI from popular apps
 					</h1>
 					<p class='lead'>
-						Why rebuild whats already proven? Devsdesign gives you a headstart by letting you build on top of existing designs, saving you time and effort so that you don’t have to build from scratch again.
+						Why rebuild whats already proven? Get a headstart by letting you build on top of existing designs, saving you time and effort so that you don’t have to build from scratch again.
 					</p>
 				</div>
 				<div class="col-md-4">
