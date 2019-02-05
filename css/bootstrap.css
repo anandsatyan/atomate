@@ -4887,10 +4887,6 @@ a.badge:focus, a.badge:hover {
   border-radius: 10rem;
 }
 
-.badge-default {
-  background-color: #636c72;
-}
-
 .badge-default[href]:focus, .badge-default[href]:hover {
   background-color: #4b5257;
 }
