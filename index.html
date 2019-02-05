@@ -53,6 +53,7 @@
 	    		  const Url='https://script.google.com/macros/s/AKfycbwhDefLeAdmGFLALSK3pklSMHoQ-Zth5EytrdmpmJxpmqX73hyF/exec?email=' + $('#inputEmail2').val();
 				  $.post(Url, function(data, status){
 				    console.log("Successfully registered email id.");  
+				    ga('send', 'event', 'Landing Page', 'Signed up');
 				    $("#loader2").hide();
 				    $("#navbar").append("<center style='padding:15px;'>Your email id is added to our alpha list. You should receive a mail from us soon.</center>");
 				  });
@@ -271,7 +272,7 @@
 						Export to Boostrap, React, Android or iOS code
 					</h1>
 					<p class='lead'>
-						With powerful features, an intuitive interface and an expansive template system, Devsdesign lets you create your best work, from your earliest ideas through to production ready code. 
+						With powerful features, an intuitive interface and an expansive template system, Devsdesign lets you create your best work, from your earliest ideas to production ready code. 
 
 					</p>
 				</div>
