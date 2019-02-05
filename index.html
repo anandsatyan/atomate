@@ -13,7 +13,7 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <script src="js/jquery.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="js/jquery.shake.js"></script>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-133670971-1"></script>
@@ -41,7 +41,12 @@
 				  });
 				}
 				else {
-					$( "#emailLeadForm" ).effect( "shake" ); 
+					$('#emailLeadForm').shake({
+			            count: 5, 
+			            distance: 10, 
+			            duration: 300,
+			            vertical: true
+			        });
 				  	console.log("Erraneous email id.")
 				}
 			});
@@ -60,7 +65,12 @@
 				  emptyField();
 				}
 				else {
-					$( "#emailLeadForm2" ).effect( "shake" ); 
+					$('#emailLeadForm2').shake({
+			            count: 5, 
+			            distance: 10, 
+			            duration: 300,
+			            vertical: true
+			        });
 				  	console.log("Erraneous email id.")
 				}
 			});
