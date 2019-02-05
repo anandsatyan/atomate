@@ -13,6 +13,8 @@
     <link href="css/bootstrap.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
     <script src="js/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-133670971-1"></script>
 	<script>
@@ -39,6 +41,7 @@
 				  });
 				}
 				else {
+					$( "#emailLeadForm" ).effect( "shake" ); 
 				  	console.log("Erraneous email id.")
 				}
 			});
@@ -53,8 +56,10 @@
 				    $("#loader2").hide();
 				    $("#navbar").append("<center style='padding:15px;'>Your email id is added to our alpha list. You should receive a mail from us soon.</center>");
 				  });
+				  emptyField();
 				}
 				else {
+					$( "#emailLeadForm2" ).effect( "shake" ); 
 				  	console.log("Erraneous email id.")
 				}
 			});
@@ -213,7 +218,7 @@
 			<div class="row justify-content-md-center margin-top">
 				<div class="col-md-6 center">
 					<p class="text-center lead margin-top">
-						Frontend Developers and designers from popular companies are using Devsdesign to build websites and apps.
+						Frontend Developers and designers from popular companies are using Devsdesign to build better websites and apps.
 					</p><br /><br />
 				</div>
 			</div>
