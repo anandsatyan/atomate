@@ -32,7 +32,7 @@
     			if($('#inputEmail1').val().length > 5 && validateEmail('inputEmail1')) {
 	    		  $("#emailLeadForm").hide();
 	    		  $("#loader").show();
-	    		  const Url='https://script.google.com/macros/s/AKfycbwNH4yk4eYccbq1FoYTKmkj7wi4EqW6IQ_kpc8FMa_3IFCmI5M/exec?email=' + $('#inputEmail1').val();
+	    		  const Url='https://script.google.com/macros/s/AKfycbwNH4yk4eYccbq1FoYTKmkj7wi4EqW6IQ_kpc8FMa_3IFCmI5M/exec?email=' + $('#inputEmail1').val() + '&status';
 				  $.post(Url, function(data, status){
 				    console.log("Successfully registered email id.");  
 				    $("#result").text("Added to waiting list. You should receive a mail soon.");
