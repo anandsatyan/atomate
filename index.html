@@ -26,6 +26,7 @@
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script>
     	$( document ).ready(function() {
+    		ga('send', 'event', 'Landing Page', 'Click');
     		$("#loader").hide();
     		$("#btnMailMe").click(function(){
     			if($('#inputEmail1').val().length > 5 && validateEmail('inputEmail1')) {
@@ -35,7 +36,7 @@
 				  $.post(Url, function(data, status){
 				    console.log("Successfully registered email id.");  
 				    $("#result").text("Added to waiting list. You should receive a mail soon.");
-				    ga('send', 'event', 'Landing Page', 'Click', 'NavbarSignup');
+				    ga('send', 'event', 'Landing Page', 'SignupSuccess', 'NavbarSignup');
 				    $("#loader").hide();
 				  });
 				}
@@ -51,13 +52,14 @@
 			});
     		$("#loader2").hide();
 			$("#btnMailMe2").click(function(){
+				ga('send', 'event', 'Landing Page', 'Click');
     			if($('#inputEmail2').val().length > 5 && validateEmail('inputEmail2')) {
 	    		  $("#emailLeadForm2").hide();
 	    		  $("#loader2").show();
 	    		  const Url='https://script.google.com/macros/s/AKfycbwNH4yk4eYccbq1FoYTKmkj7wi4EqW6IQ_kpc8FMa_3IFCmI5M/exec?email=' + $('#inputEmail2').val() + '&status';
 				  $.post(Url, function(data, status){
 				    console.log("Successfully registered email id.");  
-					ga('send', 'event', 'Landing Page', 'Click', 'HeroButtonSignup');
+				    ga('send', 'event', 'Landing Page', 'SignupSuccess', 'HeroButtonSignup');
 				    $("#loader2").hide();
 				    $("#navbar").append("<center style='padding:15px;'>Your email id is added to our alpha list. You should receive a mail from us soon.</center>");
 				  });
