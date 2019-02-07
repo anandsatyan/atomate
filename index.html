@@ -54,7 +54,7 @@
     			if($('#inputEmail2').val().length > 5 && validateEmail('inputEmail2')) {
 	    		  $("#emailLeadForm2").hide();
 	    		  $("#loader2").show();
-	    		  const Url='https://script.google.com/macros/s/AKfycbwNH4yk4eYccbq1FoYTKmkj7wi4EqW6IQ_kpc8FMa_3IFCmI5M/exec?email=' + $('#inputEmail1').val() + '&status';
+	    		  const Url='https://script.google.com/macros/s/AKfycbwNH4yk4eYccbq1FoYTKmkj7wi4EqW6IQ_kpc8FMa_3IFCmI5M/exec?email=' + $('#inputEmail2').val() + '&status';
 				  $.post(Url, function(data, status){
 				    console.log("Successfully registered email id.");  
 					ga('send', 'event', 'Landing Page', 'Click', 'HeroButtonSignup');
