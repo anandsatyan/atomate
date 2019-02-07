@@ -26,9 +26,9 @@
 	<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script>
     	$( document ).ready(function() {
-    		ga('send', 'event', 'Landing Page', 'Click');
     		$("#loader").hide();
     		$("#btnMailMe").click(function(){
+    			ga('send', 'event', 'Landing Page', 'Click');
     			if($('#inputEmail1').val().length > 5 && validateEmail('inputEmail1')) {
 	    		  $("#emailLeadForm").hide();
 	    		  $("#loader").show();
