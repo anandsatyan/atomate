@@ -28,7 +28,7 @@
     	$( document ).ready(function() {
     		$("#loader").hide();
     		$("#btnMailMe").click(function(){
-    			ga('send', 'event', 'Landing Page', 'Click');
+    			ga('send', 'event', 'Landing Page', 'Click','Navbar');
     			if($('#inputEmail1').val().length > 5 && validateEmail('inputEmail1')) {
 	    		  $("#emailLeadForm").hide();
 	    		  $("#loader").show();
@@ -52,7 +52,7 @@
 			});
     		$("#loader2").hide();
 			$("#btnMailMe2").click(function(){
-				ga('send', 'event', 'Landing Page', 'Click');
+				ga('send', 'event', 'Landing Page', 'Click', 'HeroButton');
     			if($('#inputEmail2').val().length > 5 && validateEmail('inputEmail2')) {
 	    		  $("#emailLeadForm2").hide();
 	    		  $("#loader2").show();
