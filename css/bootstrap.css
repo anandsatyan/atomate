@@ -535,7 +535,7 @@ h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
   margin-bottom: 0.5rem;
   font-family: inherit;
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.1;
   color: inherit;
 }
@@ -5467,7 +5467,6 @@ button.close {
   background-color: #fff;
   -webkit-background-clip: padding-box;
           background-clip: padding-box;
-  border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 0.3rem;
   outline: 0;
 }
@@ -5504,7 +5503,6 @@ button.close {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 15px;
-  border-bottom: 1px solid #eceeef;
 }
 
 .modal-title {
@@ -5519,23 +5517,12 @@ button.close {
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
   padding: 15px;
+  max-width: 500px;
+   margin: 0 auto;
 }
 
 .modal-footer {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: end;
-  -webkit-justify-content: flex-end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
   padding: 15px;
-  border-top: 1px solid #eceeef;
 }
 
 .modal-footer > :not(:first-child) {
@@ -5556,8 +5543,7 @@ button.close {
 
 @media (min-width: 576px) {
   .modal-dialog {
-    max-width: 500px;
-    margin: 30px auto;
+    padding: 15px auto;
   }
   .modal-sm {
     max-width: 300px;
