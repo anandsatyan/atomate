@@ -40,7 +40,12 @@
 				    $("#result").text("Added to waiting list. You should receive a mail soon.");
 				    ga('send', 'event', 'Landing Page', 'SignupSuccess', 'NavbarSignup');
 				    $("#loader").hide();
-				    isAdded = true;
+				    if($('.exit-modal').data('exit-modal')) {
+	                    $(".initialized-state").hide();
+	                    $(".destroyed-state").show();
+	                }
+	                $('.exit-modal').exitModal('hideModal');
+	                $('.exit-modal').exitModal('destroy');
 				  });
 				}
 				else {
@@ -65,7 +70,12 @@
 				    ga('send', 'event', 'Landing Page', 'SignupSuccess', 'HeroButtonSignup');
 				    $("#loader2").hide();
 				    $("#navbar").append("<center style='padding:15px;'>Your email id is added to our alpha list. You should receive a mail from us soon.</center>");
-				    isAdded = true;
+				    if($('.exit-modal').data('exit-modal')) {
+	                    $(".initialized-state").hide();
+	                    $(".destroyed-state").show();
+	                }
+	                $('.exit-modal').exitModal('hideModal');
+	                $('.exit-modal').exitModal('destroy');
 				  });
 				  emptyField();
 				}
@@ -90,6 +100,7 @@
 				    console.log("Successfully registered email id.");  
 				    $("#result3").text("Added to waiting list. You should receive a mail soon.");
 				    ga('send', 'event', 'Landing Page', 'SignupSuccess', 'ExitIntent');
+				    isAdded = true;
 				    $("#loader3").hide();
 				  });
 				}
@@ -428,23 +439,19 @@
 		AOS.init();
 			var timer;
 			var exitModalParams = {
-			    numberToShown:                  5,
+			    numberToShown:                  2,
 			    callbackOnModalShow:            function() {
 			        var counter = $('.exit-modal').data('exitModal').showCounter;
 			        $('.exit-modal .modal-body p').text("Exit modal shown "+counter+" times");
 			    },
 			    callbackOnModalShown:           function() {
-			        timer = setTimeout(function(){
-			            window.location.href = "http://";
-			        }, 4000)
+			        console.log("Exit Intent Shown")
 			    },
 			    callbackOnModalHide:            function() {
-			        clearTimeout(timer);
+			        isAdded = true;
 			    }
 			}
-			if(!isAdded) {
-				$('.exit-modal').exitModal(exitModalParams);
-			}
+			$('.exit-modal').exitModal(exitModalParams);
 			$('.destroy-exit-modal').on("click", function(e){
 			    e.preventDefault();
 			    $('.exit-modal').exitModal('destroy');
